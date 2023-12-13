@@ -3,24 +3,31 @@
  margin: 0 auto;
  padding: 2rem;
  text-align: center;
- border: 1px solid red;
+ --clr-10: green;
+ --clr-20: #e3c63d;
+ --clr-30: #888;
 }
 .seat {
  width: 50px;
  height: 50px;
- border-radius: 2px;
- border: 1px solid green;
+ border-radius: 5px;
  display: flex;
  align-items: center;
  justify-content: center;
+ border: 2px solid var(--clr-10);
 }
 .seat.bestseller {
- border-color: yellow;
+ border: 2px solid var(--clr-20);
+}
+.seat.bestseller.booked,
+.seat.booked {
+ background-color: var(--clr-10);
+}
+.seat.soled-out,
+.seat.bestseller.sold-out {
+ background-color: var(--clr-30);
 }
 
-.read-the-docs {
- color: #888;
-}
 .group {
  display: grid;
  grid-template-rows: repeat(5, max-content);
@@ -28,4 +35,14 @@
 }
 .row {
  display: flex;
+ gap: 1rem;
+}
+.row *:nth-child(2n + 1) {
+ margin-right: 2rem;
+}
+.row div:first-child {
+ margin-right: 3rem;
+}
+h2 {
+ text-align: left;
 }
